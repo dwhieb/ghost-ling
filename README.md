@@ -1,2 +1,3 @@
 # ghost-ling
-Ghost theme for the LinguisticDiscovery.com website
+
+Ghost theme for the LinguisticDiscovery.com website.
