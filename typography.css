@@ -1,0 +1,46 @@
+/* Typography */
+
+:root {
+  --font-mono:  'Fira Mono', monospace;
+  --font-sans:  'Fira Sans', sans-serif;
+  --font-serif:
+    'Libertinus Serif',
+    'Linux Libertine',
+    'Gentium Plus',
+    'Charis SIL',
+    'Doulos SIL',
+    'EB Garamond',
+    'Georgia',
+    'Source Serif Pro',
+    'Noto Serif',
+    'Times New Roman',
+    serif;
+  --font-serif-alt: var(--font-serif);
+}
+
+* {
+  letter-spacing: normal !important;
+  line-height:    1.5 !important;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: 'Libertinus Serif Display', serif !important;
+  font-weight: revert !important;
+  line-height: 1.25 !important;
+}
+
+body {
+  font-variant-ligatures:  no-common-ligatures;
+}
+
+.gh-card-excerpt {
+  font-size: 1.15em !important;
+}
+
+.gh-content {
+  font-size: 1.25em;
+}
+
+.gh-navigation {
+  font-size: 1em !important;
+}

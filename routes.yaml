@@ -1,5 +1,5 @@
 routes:
-  /: index
+  /: home
 
 collections:
   /blog/:
@@ -10,6 +10,10 @@ collections:
     filter:    primary_tag:glossary
     order:     title asc
     permalink: /glossary/{slug}/
+    template:  tag
+  /reviews/:
+    filter:    primary_tag:reviews
+    permalink: /reviews/{slug}/
     template:  tag
 
 taxonomies:
