@@ -1,0 +1,16 @@
+routes:
+  /: index
+
+collections:
+  /blog/:
+    filter:    primary_tag:blog
+    permalink: /blog/{slug}/
+    template:  tag
+  /glossary/:
+    filter:    primary_tag:glossary
+    order:     title asc
+    permalink: /glossary/{slug}/
+    template:  tag
+
+taxonomies:
+  tag: /tags/{slug}/
