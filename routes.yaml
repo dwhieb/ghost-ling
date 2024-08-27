@@ -11,6 +11,11 @@ collections:
     order:     title asc
     permalink: /glossary/{slug}/
     template:  tag
+  /languages/:
+    filter:    primary_tag:languages
+    order:     title asc
+    permalink: /languages/{slug}/
+    template:  tag
   /reviews/:
     filter:    primary_tag:reviews
     permalink: /reviews/{slug}/
