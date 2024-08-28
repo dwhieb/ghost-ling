@@ -3,7 +3,6 @@ routes:
 
 collections:
   /blog/:
-    filter:    primary_tag:blog
     permalink: /blog/{slug}/
     template:  tag
   /glossary/:
