@@ -1,7 +1,3 @@
-:root {
-  --txn-padding: 0.1em;
-}
-
 dfn {
   font-style:  normal;
   font-weight: bold;
@@ -16,10 +12,36 @@ i em {
 }
 
 .ex-source {
-  float:                right; /* fallback for inline-end */
+  float:                right;       /* fallback for inline-end */
   float:                inline-end;
-  /* margin-block:         0em 1em !important; */
   padding-inline-start: 0.25em;
+}
+
+/* Increase specificity here to override Ghost styles. */
+.gh-table table.ex-table {
+
+  font-family: var(--font-serif);
+  font-size:   1em;
+  white-space: nowrap;
+  word-break:  keep-all;
+
+  & td {
+    padding: var(--text-padding) !important;
+  }
+
+}
+
+.ex .ex-table {
+
+  & td:first-child {
+    padding-inline-start: 0;
+  }
+
+  & tbody:first-child > tr:first-child td,
+  & tr:first-child td {
+    padding-block-start: 0;
+  }
+
 }
 
 *:has(+ .ex-source) {
@@ -31,9 +53,13 @@ i em {
   --ex-indent: 1.5em;
   --ex-margin: 1em;
 
+  counter-reset:        subexamples;
   list-style-type:      none;
+  margin-block:         0;             /* Override user agent stylesheet. */
+  margin-bottom:        0;             /* Override Ghost styles. */
+  margin-top:           0;             /* Override Ghost styles. */
   padding:              0;
-  padding-inline-start: 0;             /* Remove user agent padding. */
+  padding-inline-start: 0;             /* Override user agent stylesheet. */
   padding-left:         0 !important;  /* Override Ghost styles. */
 
   .ex {
@@ -102,11 +128,16 @@ i em {
 
 }
 
+.inex, i {
+  font-style: italic;
+}
+
 .phon {
 
-  cursor:      copy;
-  font-family: var(--font-serif);
-  user-select: all;
+  --txn-padding: 0.1em;
+  cursor:        copy;
+  font-family:   var(--font-serif);
+  user-select:   all;
 
   &::before {
     content:       '/';
@@ -114,7 +145,7 @@ i em {
   }
 
   &::after  {
-    content:       '/';
+    content:      '/';
     padding-left: var(--txn-padding);
   }
 
@@ -122,9 +153,9 @@ i em {
 
 .references {
 
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  list-style:           none;
+  margin:               0;
+  padding:              0;
   padding-inline-start: 0;             /* Remove user agent padding. */
   padding-left:         0 !important;  /* Override Ghost styles. */
 
@@ -133,6 +164,22 @@ i em {
     margin-inline-start: var(--ref-indent);
     padding:             0;
     text-indent:         calc(var(--ref-indent) * -1);
+  }
+
+}
+
+.subexamples {
+
+  display:             inline-block;
+  list-style-type:     lower-alpha;
+  margin-inline-start: 1em;
+  margin-top:          0 !important;  /* Override Ghost styles. */
+  padding:             0em;
+  padding-left:        0 !important;  /* Override Ghost styles. */
+
+  .subex {
+    counter-increment: subexamples;
+    padding-block-end: 0.5em;
   }
 
 }

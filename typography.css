@@ -16,6 +16,7 @@
     'Times New Roman',
     serif;
   --font-serif-alt: var(--font-serif);
+  --text-padding:   0.25em 0.5em;
 }
 
 * {
