@@ -1,3 +1,7 @@
+:root {
+  --txn-padding: 0.1em;
+}
+
 dfn {
   font-style:  normal;
   font-weight: bold;
@@ -5,4 +9,146 @@ dfn {
 
 i em {
   font-weight: bold;
+}
+
+.ex-header {
+  text-decoration: underline;
+}
+
+.ex-source {
+  float:                right; /* fallback for inline-end */
+  float:                inline-end;
+  /* margin-block:         0em 1em !important; */
+  padding-inline-start: 0.25em;
+}
+
+*:has(+ .ex-source) {
+  display: inline;
+}
+
+.examples {
+
+  --ex-indent: 1.5em;
+  --ex-margin: 1em;
+
+  list-style-type:      none;
+  padding:              0;
+  padding-inline-start: 0;             /* Remove user agent padding. */
+  padding-left:         0 !important;  /* Override Ghost styles. */
+
+  .ex {
+
+    counter-increment:   examples;
+    margin-block:        var(--ex-margin);
+    margin-inline-start: var(--ex-indent);
+    position:            relative;
+
+    &::before {
+      content:           '(' counter(examples) ')';
+      left:              calc(var(--ex-indent) * -1);
+      margin-inline-end: var(--ex-indent);
+      position:          absolute;
+    }
+
+  }
+
+}
+
+.gh-article {
+  counter-reset: examples;
+}
+
+.igl {
+
+  --igl-indent:             0em;
+  --igl-horizontal-spacing: 1.25em;
+  --igl-vertical-spacing:   0em;
+
+  display: block;
+
+  .ex-header {
+    margin-block-end: var(--igl-vertical-spacing);
+  }
+
+  .morphemes,
+  .words {
+    display:             flex;
+    flex-flow:           row wrap;
+    list-style:          none;
+    margin:              0em;
+    margin-inline-start: var(--igl-indent);
+    padding:             0em;
+  }
+
+  .morpheme,
+  .word {
+    display:            flex;
+    flex-direction:     column;
+    margin-block-end:   var(--igl-vertical-spacing);
+    margin-block-start: var(--igl-vertical-spacing);
+  }
+
+  .morpheme > *,
+  .word > * {
+    margin:  0em;
+    padding: 0em;
+  }
+
+  li + li,
+  .morpheme + .morpheme,
+  .word + .word {
+    margin-inline-start: var(--igl-horizontal-spacing);
+  }
+
+}
+
+.phon {
+
+  cursor:      copy;
+  font-family: var(--font-serif);
+  user-select: all;
+
+  &::before {
+    content:       '/';
+    padding-right: var(--txn-padding);
+  }
+
+  &::after  {
+    content:       '/';
+    padding-left: var(--txn-padding);
+  }
+
+}
+
+.references {
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-inline-start: 0;             /* Remove user agent padding. */
+  padding-left:         0 !important;  /* Override Ghost styles. */
+
+  & li {
+    --ref-indent:        2em;
+    margin-inline-start: var(--ref-indent);
+    padding:             0;
+    text-indent:         calc(var(--ref-indent) * -1);
+  }
+
+}
+
+.tln, q {
+
+  cursor:      copy;
+  quotes:      '‘' '’' '“' '”';
+  user-select: all;
+
+  &::before {
+    content: open-quote;
+  }
+
+  &::after {
+    content: close-quote;
+  }
+
 }
