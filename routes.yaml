@@ -1,10 +1,11 @@
 routes:
   /: home
+  /blog/:
+    controller: channel
+    filter:
+    permalink:  /blog/{slug}/
 
 collections:
-  /blog/:
-    permalink: /blog/{slug}/
-    template:  tag
   /glossary/:
     filter:    primary_tag:glossary
     order:     title asc
