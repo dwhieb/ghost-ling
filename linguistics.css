@@ -18,15 +18,17 @@ i em {
 }
 
 /* Increase specificity here to override Ghost styles. */
+.ex-table,
 .gh-table table.ex-table {
 
-  font-family: var(--font-serif);
-  font-size:   1em;
-  white-space: nowrap;
-  word-break:  keep-all;
+  font-family:   var(--font-serif);
+  font-size:     1em;
+  white-space:   nowrap;
+  word-break:    keep-all;
 
   & td {
-    padding: var(--text-padding) !important;
+    border-bottom: none;                 /* Override Ghost styles. */
+    padding:       var(--text-padding);
   }
 
 }
