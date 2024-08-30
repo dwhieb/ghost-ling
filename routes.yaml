@@ -1,25 +1,26 @@
 routes:
   /: home
-  /blog/:
+  /glossary/:
     controller: channel
-    filter:
-    permalink:  /blog/{slug}/
+    filter:     primary_tag:glossary
+    order:      title asc
+    permalink:  /glossary/{slug}/
+    template:   tag
+  /languages/:
+    controller: channel
+    filter:     primary_tag:languages
+    order:      title asc
+    permalink:  /languages/{slug}/
+    template:   tag
+  /reviews/:
+    controller: channel
+    filter:     primary_tag:reviews
+    permalink:  /reviews/{slug}/
+    template:   tag
 
 collections:
-  /glossary/:
-    filter:    primary_tag:glossary
-    order:     title asc
-    permalink: /glossary/{slug}/
-    template:  tag
-  /languages/:
-    filter:    primary_tag:languages
-    order:     title asc
-    permalink: /languages/{slug}/
-    template:  tag
-  /reviews/:
-    filter:    primary_tag:reviews
-    permalink: /reviews/{slug}/
-    template:  tag
+  /blog/:
+    permalink: /blog/{slug}/
 
 taxonomies:
   tag: /tags/{slug}/
