@@ -1,19 +1,16 @@
 routes:
   /: home
-  /blog/:
+  /posts/:
     controller: channel
-    permalink:  /blog/{slug}/
-    template:   tag
+    filter:
+    permalink:  /posts/{slug}/
+    template:   index
 
 collections:
-  /announcements/:
-    filter:     primary_tag:announcements
-    permalink:  /announcements/{slug}/
   /blog/:
     filter:     primary_tag:blog
-    order:      title asc
     permalink:  /blog/{slug}/
-    template:   tag
+    template:   index
   /glossary/:
     filter:     primary_tag:glossary
     order:      title asc
