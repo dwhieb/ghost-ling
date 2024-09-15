@@ -1,3 +1,14 @@
 html {
   scroll-behavior: smooth;
 }
+
+.gh-article-image {
+
+  grid-column: main;
+
+}
+
+.kg-image-card img {
+  max-block-size: 25em;
+  width:          auto;
+}
