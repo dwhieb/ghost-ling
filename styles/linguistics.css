@@ -21,44 +21,32 @@ i em {
 .ex-table,
 .gh-table table.ex-table {
 
-  font-family:   var(--font-serif);
-  font-size:     1em;
-  white-space:   nowrap;
-  word-break:    keep-all;
+  font-family: var(--font-serif);
+  font-size:   1em;
+  margin:      0 !important;       /* Override Ghost styles, which are already *super* specific for this. */
+  white-space: nowrap;
+  word-break:  keep-all;
 
-  & td {
-    border-bottom: none;                 /* Override Ghost styles. */
-    padding:       var(--text-padding);
+  & + .ex-source {
+    margin: 0 !important; /* Override Ghost styles, which are already *super* specific for this. */
   }
 
-  &.no-head thead {
-    /* Visually Hidden */
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+  & :is(td, th) {
+    border-bottom: none;                 /* Override Ghost styles. */
+    padding:       var(--text-padding);
   }
 
 }
 
 .ex .ex-table {
-
-  & td:first-child {
-    padding-inline-start: 0;
-  }
-
-  & tbody:first-child > tr:first-child td,
-  & tr:first-child td {
+  & th,
+  & > tbody:first-child > tr:first-child td,
+  & > tr:first-child td {
     padding-block-start: 0;
   }
-
 }
 
-*:has(+ .ex-source) {
+:not(table):has(+ .ex-source) {
   display: inline;
 }
 
@@ -146,23 +134,23 @@ i em {
   font-style: italic;
 }
 
+/* Tables without header rows */
+.no-head thead {
+  /* Visually Hidden */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 .phon {
-
-  --txn-padding: 0.1em;
-  cursor:        copy;
-  font-family:   var(--font-serif);
-  user-select:   all;
-
-  &::before {
-    content:       '/';
-    padding-right: var(--txn-padding);
-  }
-
-  &::after  {
-    content:      '/';
-    padding-left: var(--txn-padding);
-  }
-
+  cursor:      copy;
+  font-family: var(--font-serif);
+  user-select: all;
 }
 
 .references {
@@ -198,11 +186,15 @@ i em {
 
 }
 
-.tln, q {
-
+:is(.tln, q) {
   cursor:      copy;
-  quotes:      '‘' '’' '“' '”';
   user-select: all;
+}
+
+/* When using <q> for translations, use single quotes. */
+q {
+
+  quotes: '‘' '’' '“' '”';
 
   &::before {
     content: open-quote;
