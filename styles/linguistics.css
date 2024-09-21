@@ -23,9 +23,13 @@ i em {
 
   font-family: var(--font-serif);
   font-size:   1em;
-  margin:      0 0 0 -0.5em !important;       /* Override Ghost styles, which are already *super* specific for this. */
+  margin:      0 !important;       /* Override Ghost styles, which are already *super* specific for this. */
   white-space: nowrap;
   word-break:  keep-all;
+
+  .ex & {
+    margin-inline-start: -0.5em;
+  }
 
   & + .ex-source {
     margin: 0 !important; /* Override Ghost styles, which are already *super* specific for this. */
