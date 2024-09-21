@@ -42,6 +42,10 @@ i em {
 
 }
 
+.gh-table:has(.ex-table) {
+  overflow-x: auto;
+}
+
 .ex .ex-table {
   & th,
   & > tbody:first-of-type > tr:first-child td,
