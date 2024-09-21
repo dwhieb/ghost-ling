@@ -23,7 +23,7 @@ i em {
 
   font-family: var(--font-serif);
   font-size:   1em;
-  margin:      0 !important;       /* Override Ghost styles, which are already *super* specific for this. */
+  margin:      0 0 0 -0.5em !important;       /* Override Ghost styles, which are already *super* specific for this. */
   white-space: nowrap;
   word-break:  keep-all;
 
@@ -40,7 +40,7 @@ i em {
 
 .ex .ex-table {
   & th,
-  & > tbody:first-child > tr:first-child td,
+  & > tbody:first-of-type > tr:first-child td,
   & > tr:first-child td {
     padding-block-start: 0;
   }
@@ -134,7 +134,13 @@ i em {
   font-style: italic;
 }
 
-/* Tables without header rows */
+/* Tables without (visible) header rows */
+/* For some reason .visually-hidden is still leaving some space. */
+/* Setting the table to display: block fixes this, but I don't know why. 🤷🏼‍♂️ */
+.no-head {
+  display: block;
+}
+
 .no-head thead {
   /* Visually Hidden */
   position: absolute;
