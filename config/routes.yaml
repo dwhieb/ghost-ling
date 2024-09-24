@@ -21,6 +21,12 @@ collections:
     order:      title asc
     permalink:  /languages/{slug}/
     template:   tag
+  /newsletter/:
+    data:       tag.newsletter
+    filter:     primary_tag:newsletter
+    order:      date asc
+    permalink:  /newsletter/{slug}/
+    template:   tag
   /reviews/:
     filter:     primary_tag:reviews
     permalink:  /reviews/{slug}/
