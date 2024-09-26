@@ -17,6 +17,11 @@ html {
   margin-block-start: 1.2em !important;
 }
 
+/* This seems to have been an oversight on Ghost's part. */
+.kg-callout-text {
+  width: 100%;
+}
+
 .kg-image-card img {
   max-block-size: 25em;
   width:          auto;
