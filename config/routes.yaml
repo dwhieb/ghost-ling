@@ -11,10 +11,10 @@ collections:
     filter:     primary_tag:blog
     permalink:  /blog/{slug}/
     template:   index
-  /glossary/:
-    filter:     primary_tag:glossary
+  /encyclopedia/:
+    filter:     primary_tag:encyclopedia
     order:      title asc
-    permalink:  /glossary/{slug}/
+    permalink:  /encyclopedia/{slug}/
     template:   tag
   /languages/:
     filter:     primary_tag:languages
