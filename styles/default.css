@@ -42,3 +42,7 @@ html {
 .kg-signup-card-text {
   padding: 1.5em 2em;
 }
+
+.price {
+  text-align: center;
+}
