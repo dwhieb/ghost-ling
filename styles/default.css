@@ -46,3 +46,7 @@ html {
 .price {
   text-align: center;
 }
+
+.gh-content .gh-table table {
+    font-size: 1.75rem;
+}
