@@ -109,7 +109,8 @@ i em {
   --igl-horizontal-spacing: 1.25em;
   --igl-vertical-spacing:   0em;
 
-  display: block;
+  display:    block;
+  overflow-x: auto;
 
   abbr {
     font-variant: small-caps;
@@ -127,6 +128,7 @@ i em {
     margin:              0em;
     margin-inline-start: var(--igl-indent);
     padding:             0em;
+    word-break:          keep-all;
   }
 
   .morpheme,
