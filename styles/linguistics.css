@@ -102,6 +102,10 @@ i em {
 
   display: block;
 
+  abbr {
+    font-variant: small-caps;
+  }
+
   .ex-header {
     margin-block-end: var(--igl-vertical-spacing);
   }
