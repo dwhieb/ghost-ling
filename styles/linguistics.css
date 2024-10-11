@@ -1,3 +1,8 @@
+:is(.tln, q) {
+  cursor:      copy;
+  user-select: all;
+}
+
 dfn {
   font-style:  normal;
   font-weight: bold;
@@ -94,6 +99,10 @@ i em {
   counter-reset: examples;
 }
 
+.gl {
+  font-variant: small-caps;
+}
+
 .igl {
 
   --igl-indent:             0em;
@@ -171,6 +180,21 @@ i em {
   user-select: all;
 }
 
+/* When using <q> for translations, use single quotes. */
+q {
+
+  quotes: '‘' '’' '“' '”';
+
+  &::before {
+    content: open-quote;
+  }
+
+  &::after {
+    content: close-quote;
+  }
+
+}
+
 .references {
 
   list-style:           none;
@@ -200,26 +224,6 @@ i em {
   .subex {
     counter-increment: subexamples;
     padding-block-end: 0.5em;
-  }
-
-}
-
-:is(.tln, q) {
-  cursor:      copy;
-  user-select: all;
-}
-
-/* When using <q> for translations, use single quotes. */
-q {
-
-  quotes: '‘' '’' '“' '”';
-
-  &::before {
-    content: open-quote;
-  }
-
-  &::after {
-    content: close-quote;
   }
 
 }
