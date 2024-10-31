@@ -95,8 +95,18 @@ i em {
 
 }
 
+.fon {
+  cursor:      copy;
+  font-family: var(--font-serif);
+  user-select: all;
+}
+
 .gh-article {
   counter-reset: examples;
+}
+
+.gh-table {
+  margin-inline: auto;
 }
 
 .gl {
@@ -174,6 +184,12 @@ i em {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+.ortho {
+  cursor:      copy;
+  font-family: var(--font-serif);
+  user-select: all;
 }
 
 .phon {
