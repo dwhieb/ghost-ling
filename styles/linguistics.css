@@ -167,6 +167,22 @@ i em {
   font-style: italic;
 }
 
+mjx-assistive-mml {
+  /* .visually-hidden */
+  position: absolute;
+  width:    1px;
+  height:   1px;
+  margin:   -1px;
+  padding:  0;
+  overflow: hidden;
+  clip:     rect(0, 0, 0, 0);
+  border:   0;
+}
+
+p mjx-container svg {
+  display: inline;
+}
+
 /* Tables without (visible) header rows */
 /* For some reason .visually-hidden is still leaving some space. */
 /* Setting the table to display: block fixes this, but I don't know why. 🤷🏼‍♂️ */

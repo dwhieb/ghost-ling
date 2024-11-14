@@ -23,7 +23,7 @@ html {
 }
 
 .kg-image-card img {
-  max-block-size: 25em;
+  max-block-size: 100vh;
   width:          auto;
 }
 
