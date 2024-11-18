@@ -132,13 +132,14 @@ i em {
 
   .morphemes,
   .words {
+    column-gap:          var(--igl-horizontal-spacing);
     display:             flex;
     flex-flow:           row wrap;
     list-style:          none;
-    margin:              0em;
+    margin-block:        var(--igl-vertical-spacing);
     margin-inline-start: var(--igl-indent);
     padding:             0em;
-    word-break:          keep-all;
+    row-gap:             var(--igl-vertical-spacing);
   }
 
   .morpheme,
@@ -153,12 +154,6 @@ i em {
   .word > * {
     margin:  0em;
     padding: 0em;
-  }
-
-  li + li,
-  .morpheme + .morpheme,
-  .word + .word {
-    margin-inline-start: var(--igl-horizontal-spacing);
   }
 
 }
