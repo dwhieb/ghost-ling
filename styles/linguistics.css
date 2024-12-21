@@ -115,15 +115,20 @@ i em {
 
 .igl {
 
+  --em-color:               red;
   --igl-indent:             0em;
   --igl-horizontal-spacing: 1.25em;
   --igl-vertical-spacing:   0em;
 
-  display:    block;
-  overflow-x: auto;
+  display: block;
 
   abbr {
     font-variant: small-caps;
+  }
+
+  & :is(b, em) {
+    color:       var(--em-color);
+    font-weight: bold;
   }
 
   .ex-header {
@@ -154,6 +159,10 @@ i em {
   .word > * {
     margin:  0em;
     padding: 0em;
+  }
+
+  .txn {
+    font-style: italic;
   }
 
 }
