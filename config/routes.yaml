@@ -1,36 +1,41 @@
 routes:
   /: home
-  /posts/:
-    controller: channel
-    filter:
-    permalink:  /posts/{slug}/
-    template:   index
-
-collections:
   /blog/:
-    filter:     primary_tag:blog
+    controller: channel
+    data:       tag.blog
+    filter:     tag:blog
     permalink:  /blog/{slug}/
-    template:   index
-  /encyclopedia/:
-    filter:     primary_tag:encyclopedia
-    order:      title asc
-    permalink:  /encyclopedia/{slug}/
-    template:   tag
-  /languages/:
-    filter:     primary_tag:languages
-    order:      title asc
-    permalink:  /languages/{slug}/
     template:   tag
   /newsletter/:
+    controller: channel
     data:       tag.newsletter
-    filter:     primary_tag:newsletter
-    order:      title desc
+    filter:     tag:newsletter
     permalink:  /newsletter/{slug}/
     template:   tag
+
+collections:
+  /encyclopedia/:
+    data:       tag.encyclopedia
+    filter:     tag:encyclopedia
+    order:      title asc
+    permalink:  /encyclopedia/{slug}/
+    template:   index
+  /languages/:
+    data:       tag.languages
+    filter:     tag:languages
+    order:      title asc
+    permalink:  /languages/{slug}/
+    template:   index
   /reviews/:
-    filter:     primary_tag:reviews
+    data:       tag.reviews
+    filter:     tag:reviews
     permalink:  /reviews/{slug}/
-    template:   tag
+    template:   index
+  # The /posts/ collection is a fallback for posts that aren't in other categories.
+  # These are posts that haven't been expanded into full articles.
+  /posts/:
+    permalink:  /posts/{slug}/
+    template:   index
 
 taxonomies:
   tag: /tags/{slug}/
