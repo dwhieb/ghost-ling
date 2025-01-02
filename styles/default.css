@@ -12,6 +12,14 @@ html {
   grid-column: main;
 }
 
+.gh-header-title {
+  color: black;
+}
+
+.gh-header.is-classic.has-image:before {
+  background-color: unset;
+}
+
 /* Buttons contained inside callouts */
 .kg-callout-card .kg-callout-text .kg-button-card {
   margin-block-start: 1.2em !important;
