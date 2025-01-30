@@ -6,11 +6,11 @@ routes:
     filter:     tag:blog
     permalink:  /blog/{slug}/
     template:   tag
-  /current-linguistics/:
+  /digest/:
     controller: channel
-    data:       tag.current-linguistics
-    filter:     tag:current-linguistics
-    permalink:  /current-linguistics/{slug}/
+    data:       tag.digest
+    filter:     tag:digest
+    permalink:  /digest/{slug}/
     template:   tag
   /newsletter/:
     controller: channel
