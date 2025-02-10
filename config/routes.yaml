@@ -1,5 +1,10 @@
 routes:
   /: home
+  /digest/:
+    controller: channel
+    data:       tag.digest
+    filter:     tag:digest
+    template:   tag
   /encyclopedia/:
     controller: channel
     data:       tag.encyclopedia
@@ -12,6 +17,11 @@ routes:
     filter:     tag:languages
     order:      title asc
     template:   index
+  /newsletter/:
+    controller: channel
+    data:       tag.newsletter
+    filter:     tag:newsletter
+    template:   tag
   /reviews/:
     controller: channel
     data:       tag.reviews
@@ -19,16 +29,9 @@ routes:
     template:   index
 
 collections:
-  /digest/:
-    data:      tag.digest
-    filter:    tag:digest
-    permalink: /digest/{slug}/
-    template:  tag
-  /newsletter/:
-    data:      tag.newsletter
-    filter:    tag:newsletter
-    permalink: /newsletter/{slug}/
-    template:  tag
+  /posts/:
+    permalink: /posts/{slug}/
+    template:  index
 
 taxonomies:
   tag: /tags/{slug}/
