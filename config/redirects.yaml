@@ -1,6 +1,10 @@
 301:
-  ^\/glossary\/([a-z0-9-]+)\/$: /encyclopedia/$1
+  ^\/blog\/([a-z0-9-]+)\/$:         /posts/$1
+  ^\/encyclopedia\/([a-z0-9-]+)\/$: /posts/$1
+  ^\/glossary\/([a-z0-9-]+)\/$:     /posts/$1
+  ^\/reviews\/([a-z0-9-]+)\/$:      /posts/$1
 302:
+  /blog:           /posts
   /books:          https://www.amazon.com/shop/linguisticdiscovery
   /glossary:       /encyclopedia
   /podcasts:       https://resources.linguisticdiscovery.com/Podcasts-fb588d41dda146eea501ed9f23975ce6
