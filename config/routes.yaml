@@ -27,9 +27,6 @@ routes:
     data:       tag.reviews
     filter:     tag:reviews
     template:   index
-  /sitemap/:
-    template:     sitemap
-    content_type: text/xml
 
 collections:
   /posts/:
