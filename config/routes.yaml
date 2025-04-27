@@ -34,4 +34,5 @@ collections:
     template:  index
 
 taxonomies:
-  tag: /tags/{slug}/
+  author: /authors/{slug}/
+  tag:    /tags/{slug}/
