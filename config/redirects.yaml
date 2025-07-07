@@ -6,6 +6,8 @@
 302:
   /blog:           /posts
   /books:          https://www.amazon.com/shop/linguisticdiscovery
+  /digest:         /current-linguistics
   /glossary:       /encyclopedia
+  /newsletter:     /articles
   /podcasts:       https://resources.linguisticdiscovery.com/Podcasts-fb588d41dda146eea501ed9f23975ce6
-  /world-of-words: /newsletter
+  /world-of-words: /articles

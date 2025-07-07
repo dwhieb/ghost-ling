@@ -1,9 +1,14 @@
 routes:
   /: home
-  /digest/:
+  /articles/:
     controller: channel
-    data:       tag.digest
-    filter:     tag:digest
+    data:       tag.articles
+    filter:     tag:articles
+    template:   tag
+  /current-linguistics/:
+    controller: channel
+    data:       tag.current-linguistics
+    filter:     tag:current-linguistics
     template:   tag
   /encyclopedia/:
     controller: channel
@@ -17,11 +22,6 @@ routes:
     filter:     tag:languages
     order:      title asc
     template:   index
-  /newsletter/:
-    controller: channel
-    data:       tag.newsletter
-    filter:     tag:newsletter
-    template:   tag
   /reviews/:
     controller: channel
     data:       tag.reviews
