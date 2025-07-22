@@ -29,7 +29,6 @@ i em {
   font-family: var(--font-serif);
   font-size:   1em;
   margin:      0 !important;       /* Override Ghost styles, which are already *super* specific for this. */
-  white-space: nowrap;
   word-break:  keep-all;
 
   .ex & {
@@ -107,6 +106,10 @@ i em {
 
 .gh-table {
   margin-inline: auto;
+}
+
+.gh-content .gh-table table {
+  white-space: normal; /* Override Ghost styles. */
 }
 
 .gl {
