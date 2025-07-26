@@ -71,7 +71,7 @@ i em {
   list-style-type:      none;
   margin-block:         0;             /* Override user agent stylesheet. */
   margin-bottom:        0;             /* Override Ghost styles. */
-  margin-top:           0;             /* Override Ghost styles. */
+  margin-top:           0 !important;  /* Override Ghost styles. */
   padding:              0;
   padding-inline-start: 0;             /* Override user agent stylesheet. */
   padding-left:         0 !important;  /* Override Ghost styles. */
@@ -121,7 +121,7 @@ i em {
   --em-color:               red;
   --igl-indent:             0em;
   --igl-horizontal-spacing: 1.25em;
-  --igl-vertical-spacing:   0em;
+  --igl-vertical-spacing:   0.25em;
 
   display: block;
 
